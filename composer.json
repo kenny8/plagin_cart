@@ -1,0 +1,9 @@
+{
+    "name": "myplugin/cart-plugin",
+    "description": "Custom cart plugin",
+    "type": "wordpress-plugin",
+    "require": {
+        "mpdf/mpdf": "^8.0",
+        "dompdf/dompdf": "^3.1"
+    }
+}

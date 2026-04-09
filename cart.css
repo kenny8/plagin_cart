@@ -1,0 +1,1777 @@
+
+
+.cart-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 999;
+}
+
+.cart-modal {
+    position: fixed;
+    width: 48.4375vw;
+    /*height: 52.08333333333333vw;*/
+    height: 99%;
+    top: 2.083333333333333vw;
+    right:  0;
+    background-color: #F4F4F4;
+    z-index: 1000;
+    /*border-radius: 16px;*/
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    padding: 2.0833vw;
+    display: none;
+    overflow-y: auto;
+    animation: slideInRight 0.3s ease-out;
+    zoom: 0.95;
+}
+.cart-modal::-webkit-scrollbar {
+  display: none;
+}
+.cart-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    width: 44.2708vw;
+    height: 2.5vw;
+}
+
+.cart-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.7813vw;
+    height: 1.4583vw;
+}
+
+.cart-title, .cart-count {
+    font-family: 'Despair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.0833vw;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #0A0A0A;
+    display: flex;
+    align-items: center;
+}
+
+.cart-modal-close {
+    width: 2.5vw;
+    height: 2.5vw;
+    background: transparent url(X.svg) center/1.25vw no-repeat;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    left: auto;
+    right: 0;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.cart-item {
+    padding: 0.7813vw;
+    border-bottom: 0.0521vw solid #eee;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+.cart-items-list {
+    margin-top: 1.3021vw;
+    margin-bottom: 0;
+    max-height: 25.1563vw;
+    overflow-y: auto;
+    padding: 0;
+    list-style: none;
+    padding-right: 0.7813vw;
+    border-top: 0.0521vw solid #cccccc;
+    border-bottom: 0.0521vw solid #cccccc;
+}
+
+/* Стили для самой полосы прокрутки */
+.cart-items-list::-webkit-scrollbar {
+    width: 0.2604vw; /* Ширина полосы прокрутки */
+    border-radius: 2.0833vw; /* Скругление углов */
+}
+  
+/* Стили для самого бегунка */
+.cart-items-list::-webkit-scrollbar-thumb {
+    background: #888; /* Цвет бегунка */
+    border-radius: 2.0833vw; /* Скругление углов бегунка */
+}
+  
+/* Когда бегунок активен */
+.cart-items-list::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Цвет бегунка при наведении */
+}
+  
+.cart-item {
+    display: flex;
+    /*justify-content: space-between;*/
+    align-items: flex-start;
+    height: 8.5938vw;
+    border-top: 0.0521vw solid #cccccc;
+    border-bottom: 0.0521vw solid #cccccc;
+}
+  
+.cart-thumb {
+    width: 6.5104vw;
+    height: 6.5104vw;
+    object-fit: cover;
+}
+  
+.cart-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 21.6146vw;
+    height: 6.5104vw;
+    margin-left: 1.041666666666667vw;
+}
+  
+.cart-info-name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2604vw;
+}
+
+.cart-item-name {
+    font-size: 1.0417vw;
+    font-weight: 500;
+    line-height: 110%;
+    text-transform: uppercase;
+    color: #0a0a0a;
+}
+  
+.cart-item-brand {
+    font-size: 0.9375vw;
+    font-weight: 400;
+    color: #999999;
+}
+
+.cart-item-price {
+    display: flex;
+    gap: 0.5208333333333333vw;
+}
+  
+.cart-item-price-now {
+    font-weight: 500;
+    color: #0a0a0a;
+    /* Desktop/Card Text/Caption Basic */
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 1.041666666666667vw;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+
+}
+.cart-item-price-old {
+    
+    /* Desktop/Text/Text Small */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.9375vw;
+    line-height: 110%;
+    /* identical to box height, or 20px */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    /* Gray/Gray Dark */
+    color: #999999;
+    text-decoration: line-through;
+}
+.item-qty {
+    width: 0.4688vw;
+    height: 1.0417vw;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.9375vw;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.qty-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 5.0521vw;
+    height: 2.0833vw;
+    border: 0.0521vw solid #0a0a0a;
+    border-radius: 1.0417vw;
+    margin-left: 3.48958vw;
+}
+  
+.qty-controls button {
+    width: 1.25vw;
+    height: 1.25vw;
+    border: none;
+    background: none;
+    border-radius: 50%;
+    color: #0a0a0a;
+    font-size: 1.5375vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.decrease-qty {
+    margin-left: 0.5vw;
+}
+.increase-qty {
+    margin-right: 0.5vw;
+}
+.remove-item {
+    width: 1.25vw;
+    height: 1.25vw;
+    background: transparent url(X1.svg) center/1.25vw no-repeat;
+    border: none;
+    margin-left: 3.48958vw;
+}
+
+.cart-description-wrapper {
+    display: flex;
+    margin-top: 1.3020vw;
+    flex-direction: column;
+    gap: 1.30208vw;
+}
+
+.cart-total-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 44.2708vw;
+    height: 0.8854vw;
+    
+}
+
+.cart-total-label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.9375vw;
+    line-height: 110%;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #0A0A0A;
+}
+
+.cart-total-price {
+    display: flex;
+    align-items: flex-end;
+    padding: 0px;
+    gap: 1.0417vw;
+}
+
+.cart-total-sale {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.9375vw;
+    line-height: 110%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #999999;
+    text-decoration: line-through;
+}
+
+.cart-total-amount {
+    font-family: 'Despair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.25vw;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #0A0A0A;
+}
+
+.cart-description-label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.9375vw;
+    line-height: 110%;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    color: #0A0A0A;
+
+}
+
+.cart-checkout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.3021vw 6.7188vw;
+    gap: 0.5208vw;
+    height: 3.2813vw;
+    background: #0000E9;
+    border-radius: 40px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.9375vw;
+    line-height: 110%;
+    align-items: center;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.cart-checkout:hover {
+    background: #FFFFFF;
+    color: #0000E9;
+    border: 0.052vw solid #0000E9;
+}
+
+.cart-order-wrapper {
+    display: flex;
+    gap: 1.041666666666667vw;
+    flex-direction: column;
+}
+
+.form-group{
+    margin-bottom: 0 !important;
+    width: 100% !important;
+    height: 3.3333vw;
+}
+
+/* Стиль для первого поля - имя */
+#name {
+    background: #ffffff;
+    border: 0.0521vw solid #cccccc;
+    border-radius: 2.0833vw;
+    padding: 1.042vw 1.823vw 1.042vw 1.823vw;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0 !important;
+    flex-grow: 1; /* Растягиваем поле по ширине */
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 1.0416vw;
+    line-height: 110.00000000000001%;
+    letter-spacing: -2%;
+    vertical-align: middle;
+
+}
+
+/* Стиль для второго поля - телефон */
+#phone {
+    background: #ffffff;
+    border: 0.0521vw solid #cccccc;
+    border-radius: 2.0833vw;
+    padding: 1.042vw 1.823vw 1.042vw 1.823vw;
+    /*padding-left: 6.25vw !important;*/
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0 !important;
+    flex-grow: 1; /* Растягиваем поле по ширине */
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 1.0416vw;
+    line-height: 110.00000000000001%;
+    letter-spacing: -2%;
+    vertical-align: middle;
+}
+.iti--inline-dropdown .iti__dropdown-content {
+    z-index: 0 !important;
+}
+/* Контейнер для полей */
+.cart-personalities-wrapper {
+    display: flex;
+    padding: 0;
+    gap: 1.041vw;
+    height: auto; /* Адаптируем высоту под контент */
+    width: 100%; /* Задаем максимальную ширину */
+}
+
+/* Скрыть поле поиска */
+.iti__search {
+    display: none !important;
+}
+
+/* Скрыть само поле ввода для поиска */
+.iti__search-input {
+    display: none !important;
+}
+
+
+.iti {
+    position: relative;
+    display: block !important; 
+}
+
+.iti__selected-country {
+    position: relative;
+    margin-left:  36px !important;
+}
+
+.iti__selected-country-primary:hover {
+    background: none!important;
+}
+
+.iti__arrow {
+    transform: scale(2)!important;  /* Увеличиваем стрелку в 1.5 раза */
+}
+
+.iti__selected-country-primary {
+    gap: 15px!important;
+    width: auto!important;
+}
+
+.iti__flag {
+    transform: scale(1.5)!important;  /* Увеличиваем флаг в 1.5 раза */
+    transform-origin: center!important;  /* Устанавливаем точку масштабирования в центр */
+}
+
+.cart-modal .iti--inline-dropdown .iti__dropdown-content {
+    top: 1.6667vw !important;
+    height: 11.5625vw !important;
+    width: 21.6146vw !important;
+}
+
+.iti__country-list {
+    margin-top: 2.7604vw !important;
+}
+
+.cart-modal .iti--inline-dropdown .iti__country-list {
+    max-height: 8.3333vw !important;
+}
+
+/* Стили для полосы прокрутки */
+.iti--inline-dropdown .iti__country-list::-webkit-scrollbar {
+    width: 0.2604vw !important;
+    border-radius: 2.0833vw !important;
+}
+  
+/* Стили для бегунка */
+.iti--inline-dropdown .iti__country-list::-webkit-scrollbar-thumb {
+    background: #888 !important;
+    border-radius: 2.0833vw !important;
+}
+  
+/* Активный бегунок */
+.iti--inline-dropdown .iti__country-list::-webkit-scrollbar-thumb:hover {
+    background: #555 !important;
+}
+
+.iti__country {
+    padding-left: 2.0833vw !important;
+    padding-right: 2.0833vw !important;
+}
+
+.iti__dial-code {
+    position: relative !important;
+    margin-right: 0 !important;
+    margin-left: auto !important;
+    font-family: 'Inter'!important;
+    font-weight: 500!important;
+    font-size: 1.0416vw!important;
+    line-height: 110.00000000000001%!important;
+    letter-spacing: -2%!important;
+    vertical-align: middle!important;
+
+}
+.iti__selected-dial-code {
+    font-family: 'Inter'!important;
+    font-weight: 500!important;
+    font-size: 20px!important;
+    line-height: 110.00000000000001%!important;
+    letter-spacing: -2%!important;
+    vertical-align: middle!important;
+}
+.iti__country-name {
+    margin-left: 0.3906vw !important;
+    color: #000;
+}
+
+.iti__selected-country-primary {
+    background: none !important; 
+}
+
+.iti .iti__selected-dial-code {
+    margin-top: 2px !important;
+    color: #000;
+}
+
+.cart-final-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5625vw;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: space-between;
+    width: 24.1667vw;
+}
+
+.label-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0vw;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.9375vw;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #999999;
+}
+
+
+.switch {
+    display: flex;
+    gap: 0.5208vw;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+  .switch input[type="radio"] {
+    display: none; /* скрываем оригинал */
+  }
+  
+  .switch input[type="radio"]:checked + .custom-radio + .label-text {
+    color: #0A0A0A;
+  }
+
+  .custom-radio {
+    width: 1.0417vw;
+    height: 1.0417vw;
+    border: 0.1042vw solid #999999;
+    border-radius: 50%;
+    position: relative;
+    box-sizing: border-box;
+    z-index: -1;
+  }
+  
+  .switch input[type="radio"]:checked + .custom-radio {
+    border-color: #0A0A0A;
+  }
+  
+
+  .switch input[type="radio"]:checked + .custom-radio::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.5208vw;
+    height: 0.5208vw;
+    background-color: #0A0A0A;
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+
+.cart-button-wrapper {
+    display: flex;
+    gap: 0.5208vw;
+    flex-direction: column;
+
+}
+  .cart-privacy-policy {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+    gap: 0.2604vw;
+    width: 27.7604vw;
+    height: 1.0938vw;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.8333vw;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+  }
+  
+  .privacy-text {
+    color: #999999;
+    display: flex;
+    align-items: center;
+    height: 0.9375vw;
+  }
+  
+  .privacy-link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 0.1563vw;
+    width: 13.0729vw;
+    height: 1.0938vw;
+    text-decoration: none;
+
+  }
+  
+  .privacy-link-text {
+    color: #0A0A0A;
+    height: 0.9375vw;
+    text-decoration: none;
+  }
+  
+  .privacy-link-text {
+    color: #0A0A0A;
+    border-bottom: 1px solid #0A0A0A; /* рисуем чёрное подчёркивание */
+    text-decoration: none;
+  }
+  
+  .privacy-link,
+.privacy-link:hover,
+.privacy-link:visited,
+.privacy-link:active {
+  text-decoration: none;
+}
+
+.empty-shopping-cart {
+    margin-top: 1.82291vw;
+}
+
+.empty-cart-message {
+    margin-top: 1.82291vw;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.04vw; /* 20/1920*100 */
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    color: #0A0A0A;
+    display: flex;
+    align-items: center;
+}
+
+.name-tel-form-group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2604vw;
+}
+
+.empty-name-message {  
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.8333vw;
+    line-height: 110%;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #FF0000;
+    display: none;
+}
+
+.empty-tel-message {  
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.8333vw;
+    line-height: 110%;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #FF0000;
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .cart-modal {
+        width: 68.36vw; /* 700/1024*100 */
+        /*height: 68.95vw;*/
+        top: 0;
+        right: 1.953125vw;
+        padding: 2.93vw;
+        zoom: 0.77;
+    }
+    
+    .cart-modal-header {
+        width: 62.5vw;
+        height: 2.34vw;
+    }
+    
+    .cart-title-wrapper {
+        gap: 0.98vw;
+        height: 2.15vw;
+    }
+    
+    .cart-title, .cart-count {
+        font-size: 3.13vw;
+    }
+    
+    .cart-modal-close {
+        width: 2.34vw;
+        height: 2.34vw;
+        background: transparent url(X.svg) center/2.34vw no-repeat;
+    }
+
+    .empty-cart-message {
+        margin-top: 1.95vw;
+        font-size: 1.37vw; /* 14/1024*100 */
+    }
+    
+    .cart-item {
+        padding: 1.46vw;
+        height: 12.11vw;
+        border-top: 0.098vw solid #cccccc;
+        border-bottom: 0.098vw solid #cccccc;
+    }
+    
+    .cart-items-list {
+        margin-top: 2.15vw;
+        max-height: 29.98vw;
+        padding-right: 2.44vw;
+        border-top: 0.098vw solid #cccccc;
+        border-bottom: 0.098vw solid #cccccc;
+    }
+    
+    /* Стили для самой полосы прокрутки */
+    .cart-items-list::-webkit-scrollbar {
+        width: 0.49vw;
+        border-radius: 3.91vw;
+    }
+    
+    /* Стили для самого бегунка */
+    .cart-items-list::-webkit-scrollbar-thumb {
+        border-radius: 3.91vw;
+    }
+    
+    .cart-thumb {
+        width: 9.18vw;
+        height: 9.18vw;
+    }
+    
+    .cart-info {
+        width: 27.44vw;
+        height: 9.18vw;
+        margin-left: 1.46vw;
+    }
+    
+    .cart-info-name {
+        gap: 0.49vw;
+    }
+    
+    .cart-item-name {
+        font-size: 1.37vw;
+    }
+    
+    .cart-item-brand {
+        font-size: 1.37vw;
+    }
+    
+    .cart-item-price {
+        gap: 0.49vw;
+    }
+    
+    .cart-item-price-now {
+        font-size: 1.37vw;
+    }
+    .cart-item-price-old {
+        font-size: 1.17vw;
+    }
+    .qty-controls {
+        width: 9.47vw;
+        height: 3.91vw;
+        border: 0.098vw solid #0a0a0a;
+        border-radius: 1.95vw;
+        margin-left: 5.08vw;
+    }
+    
+    .item-qty {
+        width: auto;
+        height: 1.46vw;
+        font-size: 1.37vw;
+    }
+    
+    .qty-controls button {
+        width: 2.34vw;
+        height: 2.34vw;
+        font-size: 1.37vw;
+    }
+    
+    .remove-item {
+        width: 2.34vw;
+        height: 2.34vw;
+        background: transparent url(X1.svg) center/2.34vw no-repeat;
+    }
+    
+    .cart-description-wrapper {
+        margin-top: 1.95vw;
+        gap: 1.95vw;
+    }
+    
+    .cart-total-wrapper {
+        width: 62.5vw;
+        height: 1.37vw;
+    }
+    
+    .cart-total-label {
+        font-size: 1.95vw;
+    }
+    
+    .cart-total-price {
+        gap: 1.46vw;
+    }
+    
+    .cart-total-sale {
+        font-size: 1.56vw;
+    }
+    
+    .cart-total-amount {
+        font-size: 1.95vw;
+    }
+    
+    .cart-description-label {
+        font-size: 1.37vw;
+    }
+    
+    .cart-checkout {
+        padding: 1.95vw 12.6vw;
+        height: 4.88vw;
+        font-size: 1.37vw;
+    }
+    
+    .cart-checkout:hover {
+        border: 0.098vw solid #0000E9;
+    }
+    
+    .cart-order-wrapper {
+        gap: 1.95vw;
+    }
+
+    .form-group{
+        height: 5.27vw;
+    }
+    
+    /* Стиль для первого поля - имя */
+    #name {
+        border: 1px solid #cccccc;
+        border-radius: 40px;
+        padding: 1.46vw 2.44vw;
+        font-size: 1.37vw;
+    }
+    
+    /* Стиль для второго поля - телефон */
+    #phone {
+        border: 1px solid #cccccc;
+        border-radius: 40px;
+        padding: 1.46vw 9.77vw;
+        font-size: 1.37vw;
+    }
+    
+    .iti {
+        height: 5.27vw;
+    }
+    
+    /* Контейнер для полей */
+    .cart-personalities-wrapper {
+        gap: 1.46vw;
+    }
+    
+    .iti__selected-country {
+        margin-left:  25px !important;
+    }
+    
+    .iti__arrow {
+        transform: scale(2)!important;  /* Увеличиваем стрелку в 1.5 раза */
+    }
+    
+    .iti__selected-country-primary {/*ТАК И ОСТАВЛЯЕМ*/
+        gap: 3.5px!important;
+        width: auto!important;
+    }
+    
+    .iti__flag {
+        transform: scale(1.25)!important;  /* Увеличиваем флаг в 1.5 раза */
+    }
+    
+    .cart-modal .iti--inline-dropdown .iti__dropdown-content {
+        top: 2.73vw !important;
+        height: 15.72vw !important;
+        width: 30.27vw !important;
+    }
+    
+    .iti__country-list {
+        margin-top: 3.22vw !important;
+    }
+    
+    .cart-modal .iti--inline-dropdown .iti__country-list {
+        max-height: 12.5vw !important;
+    }
+    
+    /* Стили для полосы прокрутки */
+    .iti--inline-dropdown .iti__country-list::-webkit-scrollbar {
+        width: 0.49vw !important;
+        border-radius: 40px !important;
+    }
+      
+    /* Стили для бегунка */
+    .iti--inline-dropdown .iti__country-list::-webkit-scrollbar-thumb {
+        border-radius: 40px !important;
+    }
+    
+    .iti__country {
+        padding-left: 2.44vw !important;
+        padding-right: 2.44vw !important;
+    }
+    
+    .iti__dial-code {
+        font-size: 1.37vw!important;
+    }
+
+    .iti__selected-dial-code {/*ТАК И ОСТАВЛЯЕМ*/
+        font-size: 14px!important;
+    }
+    .iti__country-name {
+    margin-left: 0.54vw !important;
+}
+
+.cart-final-wrapper {
+    gap: 1.46vw;
+}
+
+.contact-methods {
+    width: 32.52vw;
+}
+
+.label-text {
+    font-size: 1.17vw;
+}
+
+.switch {
+    gap: 0.49vw;
+}
+
+.custom-radio {
+    width: 2.34vw;
+    height: 2.34vw;
+    border: 2px solid #999999;
+}
+
+.switch input[type="radio"]:checked + .custom-radio::after {
+    width: 0.98vw;
+    height: 0.98vw;
+}
+
+.cart-button-wrapper {
+    gap: 0.68vw;
+}
+
+.cart-privacy-policy {
+    gap: 0.49vw;
+    width: 45.12vw;
+    height: auto;
+    font-size: 1.37vw;
+    white-space: nowrap;
+}
+
+.privacy-text {
+    color: #999999;
+    display: flex;
+    align-items: center;
+    height: auto;
+}
+      
+.privacy-link {
+    padding: 0;
+    width: auto;
+    height: auto;
+}
+
+.privacy-link-text {
+    height: auto;
+}
+
+.privacy-link-text {
+    color: #0A0A0A;
+    border-bottom: 1px solid #0A0A0A; /* рисуем чёрное подчёркивание */
+    text-decoration: none;
+}
+
+.name-tel-form-group{
+    gap: 0.49vw;
+}
+
+.empty-name-message {  
+    font-size: 1.17vw;
+}
+
+.empty-tel-message {  
+    font-size: 1.17vw;
+}
+}
+
+@media (max-width: 375px) {
+    .cart-modal {
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+        top: 0;
+        left: 0;
+        padding: 5.33vw 2.67vw;
+        zoom: 1;
+    }
+
+    .cart-modal::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .cart-modal-header {
+        width: auto;
+        height: 6.4vw;
+    }
+    
+    .cart-title-wrapper {
+        gap: 1.33vw;
+        height: 6.4vw;
+    }
+    
+    .cart-title, .cart-count {
+        font-size: 6.4vw;
+    }
+    
+    .cart-modal-close {
+        width: 6.4vw;
+        height: 6.4vw;
+        background: transparent url(X.svg) center/6.4vw no-repeat;
+    }
+
+    .empty-cart-message {
+        margin-top: 5.33vw;
+        font-size: 3.73vw;
+    }
+    
+    .cart-item {
+        padding: 0;
+        padding-top: 2.67vw;
+        padding-bottom: 2.67vw;
+        height: 37.33vw;
+        border-top: 1px solid #cccccc;
+        border-bottom: 1px solid #cccccc;
+    }
+    
+    .cart-items-list {
+        margin-top: 6.27vw;
+        max-height: 164vw;
+        padding-right: 0;
+        border-top: 1px solid #cccccc;
+        border-bottom: 1px solid #cccccc;
+    }
+    
+    .cart-thumb {
+        width: 32vw;
+        height: 32vw;
+    }
+    
+    .cart-info {
+        width: 50.93vw;
+        height: 11.2vw;
+        margin-left: 2.67vw;
+    }
+    
+    .cart-info-name {
+        gap: 0.8vw;
+    }
+    
+    .cart-item-name {
+        font-size: 3.2vw;
+    }
+    
+    .cart-item-brand {
+        font-size: 3.2vw;
+    }
+    
+    .cart-item-price {
+        gap: 0.8vw;
+    }
+    
+    .cart-item-price-now {
+        font-size: 3.73vw;
+    }
+    .cart-item-price-old {
+        font-size: 3.2vw;
+    }
+    .qty-controls {
+        width: 20.8vw;
+        height: 8vw;
+        border: 1px solid #0a0a0a;
+        border-radius: 20px;
+        margin-left: -50.93vw;
+        margin-top: auto;
+        margin-bottom: 0;
+    }
+    
+    .item-qty {
+        width: auto;
+        height: auto;
+        font-size: 3.2vw;
+    }
+    
+    .qty-controls button {
+        width: 6.4vw;
+        height: 6.4vw;
+        font-size: 3.2vw;
+    }
+    
+    .remove-item {
+        width: 6.4vw;
+        height: 6.4vw;
+        background: transparent url(X1.svg) center/6.4vw no-repeat;
+        margin-left: auto;
+        margin-right: 0;
+    }
+    
+    .cart-description-wrapper {
+        margin-top: 5.33vw;
+        gap: 4vw;
+    }
+    
+    .cart-total-wrapper {
+        width: auto;
+        height: 3.73vw;
+    }
+    
+    .cart-total-label {
+        font-size: 5.33vw;
+    }
+    
+    .cart-total-price {
+        gap: 1.33vw;
+    }
+    
+    .cart-total-sale {
+        font-size: 4.8vw;
+    }
+    
+    .cart-total-amount {
+        font-size: 5.33vw;
+    }
+    
+    .cart-description-label {
+        font-size: 3.73vw;
+    }
+    
+    .cart-checkout {
+        padding: 5.33vw 34.4vw;
+        height: 13.33vw;
+        font-size: 3.73vw;
+        white-space: nowrap;
+    }
+    
+    .cart-checkout:hover {
+        border: 0.267vw solid #0000E9;
+    }
+    
+    .cart-order-wrapper {
+        gap: 4vw;
+    }
+
+    .form-group{
+        height: 14.4vw;
+    }
+    
+    /* Стиль для первого поля - имя */
+    #name {
+        border: 0.267vw solid #cccccc;
+        border-radius: 10.67vw;
+        padding: 4vw 6.67vw;
+        font-size: 3.73vw;
+    }
+    
+    /* Стиль для второго поля - телефон */
+    #phone {
+        border: 0.267vw solid #cccccc;
+        border-radius: 10.67vw;
+        padding: 4vw 6.67vw;
+        font-size: 3.73vw;
+    }
+    
+    .iti {
+        height: 14.4vw;
+    }
+    
+    /* Контейнер для полей */
+    .cart-personalities-wrapper {
+        display: flex;
+        gap: 2.67vw;
+        flex-direction: column;
+    }
+    
+    .iti__selected-country {
+        margin-left:  25px !important;
+    }
+    
+    .iti__arrow {
+        transform: scale(2)!important;  /* Увеличиваем стрелку в 1.5 раза */
+    }
+    
+    .iti__selected-country-primary {/*ТАК И ОСТАВЛЯЕМ*/
+        gap: 3.5px!important;
+        width: auto!important;
+    }
+    
+    .iti__flag {
+        transform: scale(1.25)!important;  /* Увеличиваем флаг в 1.5 раза */
+    }
+    
+    .cart-modal .iti--inline-dropdown .iti__dropdown-content {
+        top: 7.47vw !important;
+        height: 41.33vw !important;
+        width: 94.5vw !important;
+    }
+    
+    .iti__country-list {
+        margin-top: 9.33vw !important;
+    }
+    
+    .cart-modal .iti--inline-dropdown .iti__country-list {
+        max-height: 32vw !important;
+    }
+    
+    /* Стили для полосы прокрутки */
+    .iti--inline-dropdown .iti__country-list::-webkit-scrollbar {
+        width: 0.49vw !important;
+        border-radius: 10.67vw !important;
+    }
+      
+    /* Стили для бегунка */
+    .iti--inline-dropdown .iti__country-list::-webkit-scrollbar-thumb {
+        border-radius: 10.67vw !important;
+    }
+    
+    .iti__country {
+        padding-left: 2.44vw !important;
+        padding-right: 2.44vw !important;
+    }
+    
+    .iti__dial-code {
+        font-size: 2.67vw!important;
+    }
+
+    .iti__selected-dial-code {/*ТАК И ОСТАВЛЯЕМ*/
+        font-size: 14px!important;
+    }
+    .iti__country-name {
+        margin-left: 0.54vw !important;
+    }
+    
+    .cart-final-wrapper {
+        gap: 5.33vw;
+    }
+    
+    .contact-methods {
+        width: 32.52vw;
+        display: flex;
+        flex-direction: column;
+        gap: 3.2vw;
+    }
+    
+    .label-text {
+        font-size: 3.2vw;
+    }
+    
+    .switch {
+        gap: 1.33vw;
+    }
+    
+    .custom-radio {
+        width: 3.73vw;
+        height: 3.73vw;
+        border: 0.53vw solid #999999;
+        z-index: -1;
+    }
+    
+    .switch input[type="radio"]:checked + .custom-radio::after {
+        width: 1.6vw;
+        height: 1.6vw;
+    }
+    
+    .cart-button-wrapper {
+        gap: 1.33vw;
+        width: 100%;
+    }
+    
+    .cart-privacy-policy {
+        gap: 0.8vw;
+        width: 100%;
+        height: auto;
+        font-size: 3.73vw;
+        white-space: nowrap;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .privacy-text {
+        color: #999999;
+        display: flex;
+        align-items: center;
+        height: auto;
+    }
+          
+    .privacy-link {
+        padding: 0;
+        width: auto;
+        height: auto;
+    }
+    
+    .privacy-link-text {
+        height: auto;
+    }
+    
+    .privacy-link-text {
+        color: #0A0A0A;
+        border-bottom: 0.267vw solid #0A0A0A;
+        text-decoration: none;
+    }
+    
+    .name-tel-form-group{
+        gap: 1.33vw;
+    }
+    
+    .empty-name-message {  
+        font-size: 3.2vw;
+    }
+    
+    .empty-tel-message {  
+        font-size: 3.2vw;
+    }
+}
+
+
+/* Анимация появления */
+/* Анимация появления */
+@keyframes modalSlideIn {
+  from {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+/* Анимация исчезновения */
+@keyframes modalSlideOut {
+  from {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+}
+
+.cart-modal_personalities {
+  position: fixed;
+  top: 10.05208333333333vw;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #F4F4F4;
+  z-index: 1000;
+  box-shadow: 0 0 1.041666666666667vw rgba(0,0,0,0.3);
+  padding: 5.2083vw 2.083333vw;
+  display: none;
+  overflow-y: auto;
+}
+
+/* Классы для анимации */
+.modal-slide-in {
+  animation: modalSlideIn 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.modal-slide-out {
+  animation: modalSlideOut 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.cart-modal_personalities.tattoo-theme {
+    background-color: #000;
+    color: #fff;
+}
+
+.cart-modal_personalities.tattoo-theme .personalities-title {
+    color: #F00;
+}
+.cart-modal_personalities.tattoo-theme .personalities-description-label {
+    color: #fff;
+}
+.cart-modal_personalities.tattoo-theme .iti__selected-dial-code {
+    color: #fff;
+}
+
+.cart-modal_personalities.tattoo-theme .iti--inline-dropdown .iti__dropdown-content {
+    background-color: #000;
+    border: 1px solid #ccc; /* 1px */
+}
+.cart-modal_personalities.tattoo-theme .iti--inline-dropdown .iti__country-name {
+    color: #fff;
+}
+.cart-modal_personalities.tattoo-theme .cart-modal-close {
+    background: transparent url(X_tattoo.svg) center/1.25vw no-repeat;
+}
+
+
+
+.cart-modal_personalities.tattoo-theme .switch input[type="radio"]:checked + .custom-radio + .label-text {
+    color: #FFF;
+  }
+
+.cart-modal_personalities.tattoo-theme  .custom-radio {
+    border: 0.1042vw solid #999;
+  }
+  
+.cart-modal_personalities.tattoo-theme  .switch input[type="radio"]:checked + .custom-radio {
+    border-color: #FFF;
+  }
+  
+
+.cart-modal_personalities.tattoo-theme  .switch input[type="radio"]:checked + .custom-radio::after {
+    background-color: #FFF;
+  }
+
+
+.cart-modal_personalities.tattoo-theme .cart-checkout {
+    background:  #FFF;
+    color:   #0A0A0A;
+    border: 1px solid #0A0A0A;
+}
+
+.cart-modal_personalities.tattoo-theme .cart-checkout:hover {
+    border: 1px solid #FFF;
+    background: #0A0A0A;
+    color: #FFF;
+}
+.cart-modal_personalities.tattoo-theme .privacy-link-text{
+    color: #FFF;
+    border-bottom: 1px solid #FFF;
+}
+
+  .cart-modal_personalities .iti--inline-dropdown .iti__dropdown-content {
+    top: 1.6667vw !important;
+    height: 15vw !important;
+    width: 29.166666vw !important;
+}
+
+.cart-modal_personalities .iti--inline-dropdown .iti__country-list {
+    max-height: 11.395833vw !important;
+}
+  
+.personalities-modal-render {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    gap: 2.083vw; /* 40px */
+}
+
+.personalities-title {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #0A0A0A;
+    text-align: center;
+    font-family: "Despair Display";
+    font-size: 2.083vw; /* 40px */
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.042vw; /* -0.8px */
+    text-transform: uppercase;
+}
+
+.personalities-modal-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    gap: 1.042vw; /* 20px */
+    width: 44.271vw; /* 850px */
+}
+
+.personalities-title-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 2.083vw; /* 40px */
+}
+
+.personalities-description-label {
+    color: #0A0A0A;
+    width: 29.167vw; /* 560px */
+    text-align: center;
+    flex: 1 0 0;
+    font-family: "Inter";
+    font-size: 0.938vw; /* 18px */
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    letter-spacing: -0.019vw; /* -0.36px */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Стиль для первого поля - имя */
+#name_personalities {
+    background: #ffffff;
+    border: 0.052vw solid #cccccc; /* 1px */
+    border-radius: 2.083vw; /* 40px */
+    padding: 1.042vw 1.823vw; /* 20px 35px */
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0 !important;
+    flex-grow: 1;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 1.042vw; /* 20px */
+    line-height: 110%;
+    letter-spacing: -0.02vw; /* -2% */
+    vertical-align: middle;
+}
+.cart-modal_personalities.tattoo-theme #name_personalities {
+    color: #999;
+    background: #0A0A0A;
+    border: 0.052vw solid #CCC; /* 1px */
+}
+/* Стиль для второго поля - телефон */
+#phone_personalities {
+    background: #ffffff;
+    border: 0.052vw solid #cccccc; /* 1px */
+    border-radius: 2.083vw; /* 40px */
+    padding: 1.042vw 1.823vw; /* 20px 35px */
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0 !important;
+    flex-grow: 1;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 1.042vw; /* 20px */
+    line-height: 110%;
+    letter-spacing: -0.02vw; /* -2% */
+    vertical-align: middle;
+}
+.cart-modal_personalities.tattoo-theme #phone_personalities {
+    color: #999;
+    background: #0A0A0A;
+    border: 0.052vw solid #CCC; /* 1px */
+}
+/* Контейнер для полей */
+.personalities-wrapper {
+    display: flex;
+    gap: 1.042vw; /* 20px */
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    width: 29.167vw; /* 560px */
+}
+
+.contact-methods_personalities {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 1.042vw; /* 20px */
+}
+
+.personalities-final-wrapper {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    gap: 2.083vw; /* 40px */
+    flex-direction: column;
+}
+
+
+@media (max-width: 1024px) {
+
+    .cart-modal_personalities {
+        top: 11.91vw; /* 122px */
+        box-shadow: 0 0 1.46vw rgba(0,0,0,0.3); /* 15px */
+        padding: 6.84vw 1.95vw; /* 70px 20px */
+    }
+    
+    .cart-modal_personalities .iti--inline-dropdown .iti__dropdown-content {
+        top: 2.73vw !important;
+        height: 22.16vw !important;
+        width: 42.97vw !important;
+    }
+    
+    .cart-modal_personalities .iti--inline-dropdown .iti__country-list {
+        max-height: 18.54vw !important;
+    }
+        .cart-modal_personalities.tattoo-theme .cart-modal-close {
+    background: transparent url(X_tattoo.svg) center/2.34vw no-repeat;
+}
+    .personalities-modal-render {
+        gap: 2.93vw; /* 30px */
+    }
+    
+    .personalities-title {
+        font-size: 3.13vw; /* 32px */
+        letter-spacing: -0.06vw; /* -0.64px */
+    }
+    
+    .personalities-modal-header {
+        gap: 1.46vw; /* 15px */
+        width: 64.45vw; /* 660px */
+    }
+    
+    .personalities-title-wrapper {
+        gap: 1.95vw; /* 20px */
+    }
+    
+    .personalities-description-label {
+        width: 55.86vw; /* 572px */
+        font-size: 1.37vw; /* 14px */
+        letter-spacing: -0.03vw; /* -0.28px */
+    }
+    
+    #name_personalities {
+        border: 0.098vw solid #cccccc; /* 1px */
+        border-radius: 3.91vw; /* 40px */
+        padding: 2.44vw 1.46vw; /* 25px 15px */
+        font-size: 1.37vw; /* 14px */
+        letter-spacing: -0.03vw; /* -0.28px */
+    }
+    
+    #phone_personalities {
+        border: 0.098vw solid #cccccc; /* 1px */
+        border-radius: 3.91vw; /* 40px */
+        padding: 2.44vw 1.46vw; /* 25px 15px */
+        font-size: 1.37vw; /* 14px */
+        letter-spacing: -0.03vw; /* -0.28px */
+    }
+    
+    .personalities-wrapper {
+        gap: 1.46vw; /* 15px */
+        width: 42.97vw; /* 440px */
+    }
+    
+    .contact-methods_personalities {
+        gap: 1.46vw; /* 15px */
+    }
+    
+    .personalities-final-wrapper {
+        gap: 2.93vw; /* 30px */
+    }
+
+
+}
+
+
+@media (max-width: 375px) {
+    .cart-modal_personalities {
+        height: 100vh;
+        top: 0;
+        overflow-y: auto;
+        box-shadow: 0 0 4vw rgba(0,0,0,0.3); /* 15px → 4vw */
+        padding: 5.333vw 2.667vw 54.667vw 2.667vw; /* 20px 10px 205px 10px */
+        width: 100%;
+    }
+    .cart-modal_personalities::-webkit-scrollbar {
+        display: none;
+    }
+ 
+    .cart-modal_personalities .iti--inline-dropdown .iti__dropdown-content {
+        top: 7.47vw !important;
+        height: 77.067vw !important;
+        width: 94.5vw !important;
+    }
+    
+    .cart-modal_personalities .iti--inline-dropdown .iti__country-list {
+        max-height: 66.4vw !important;
+    }
+    
+    .personalities-modal-render {
+        gap: 8vw; /* 30px → 8vw */
+    }
+    
+    .personalities-title {
+        font-size: 6.4vw; /* 24px → 6.4vw */
+        letter-spacing: -0.128vw; /* -0.48px → -0.128vw */
+        margin-top: 18.667vw; /* 70px → 18.667vw */
+    }
+    
+    .personalities-modal-header {
+        gap: 2.667vw; /* 10px → 2.667vw */
+        width: 100%;
+    }
+    
+    .personalities-title-wrapper {
+        gap: 3.333vw; /* 12.5px → 3.333vw */
+        align-items: flex-start;
+    }
+    
+    .personalities-description-label {
+        width: 75.2vw; /* 282px → 75.2vw */
+        font-size: 3.733vw; /* 14px → 3.733vw */
+        letter-spacing: -0.075vw; /* -0.28px → -0.075vw */
+        display: block;
+    }
+    
+    #name_personalities {
+        border: 1px solid #cccccc;
+        border-radius: 10.667vw; /* 40px → 10.667vw */
+        padding: 6.667vw 4vw; /* 25px 15px → 6.667vw 4vw */
+        font-size: 3.733vw; /* 14px → 3.733vw */
+        letter-spacing: -0.075vw; /* -0.28px → -0.075vw */
+    }
+    
+    #phone_personalities {
+        border: 1px solid #cccccc;
+        border-radius: 10.667vw; /* 40px → 10.667vw */
+        padding: 6.667vw 4vw; /* 25px 15px → 6.667vw 4vw */
+        font-size: 3.733vw; /* 14px → 3.733vw */
+        letter-spacing: -0.075vw; /* -0.28px → -0.075vw */
+    }
+    
+    .personalities-wrapper {
+        gap: 2.667vw; /* 10px → 2.667vw */
+        width: 100%;
+    }
+    
+    .contact-methods_personalities {
+        gap: 3.2vw; /* 12px → 3.2vw */
+        flex-direction: column;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
+    .personalities-final-wrapper {
+        gap: 8vw; /* 30px → 8vw */
+        width: 100%;
+    }
+            .cart-modal_personalities.tattoo-theme .cart-modal-close {
+    background: transparent url(X_tattoo.svg) center/6.4vw no-repeat;
+}
+}
+
